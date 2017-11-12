@@ -47,32 +47,4 @@ class Collection
         return isset($this->items[$key]);
     }    
 
-    public function ToXML() {
-        $xmlString = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>';
-        $xmlString .= '<records>';
-        
-        $recordCount = $this->length();
-        echo $recordCount;
-
-        for ($i = 0; $i < $recordCount ; $i++) {
-            $record = $this->getItem($i);
-            
-            $xmlString .= '<record>';
-            $xmlString .= '<playerID>' . $record->playerID . '</playerID>';
-            $xmlString .= '<yearID>' . $record->yearID . '</yearID>';
-            $xmlString .= '<stint>' . $record->stint . '</stint>';
-            $xmlString .= '<teamID>' . $record->teamID . '</teamID>';
-            $xmlString .= '<lgID>' . $record->lgID . '</lgID>';
-            $xmlString .= '<G>' . $record->G . '</G>';
-            $xmlString .= '<AB>' . $record->ab . '</AB>';
-            $xmlString .= '<R>' . $record->R . '</R>';
-            $xmlString .= '<H>' . $record->H . '</H>';
-            $xmlString .= '</record>';
-        }
-
-        $xmlString .= '</records>';
-
-        return $xmlString;
-    }
-    
 }

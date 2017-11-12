@@ -14,7 +14,8 @@ class PerformanceAPI
     }
 
     public function ProcessAPI() {
-        
+        $StartTime = $this->getDateTimeInMilliseconds();
+
         // Cater for header
         $this->recordLimit = $this->recordLimit - 1;    
         
@@ -44,16 +45,30 @@ class PerformanceAPI
         
             fclose($handle);
 
-            return $this->RecordsToXML($resultSet);
+            return $this->RecordsToXML($resultSet, $StartTime);
 
         } else {
             echo "Data File not found!";
         } 
     }
 
-    private function RecordsToXML($resultSet) {
+    private function getDateTimeInMilliseconds() {
+        return date("Y-m-d H:i:s") . '.' . $this->getCurrentMilliSeconds();
+    }
+
+    private function getCurrentMilliSeconds() {
+        $timeStampData = microtime();
+        list($msec, $sec) = explode(' ', $timeStampData);
+        $msec = round($msec * 1000);
+        
+        return $msec;
+    }
+
+    private function RecordsToXML($resultSet, $StartTime) {
         $xmlString = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>';
-        $xmlString .= '<records>';
+        $xmlString .= '<ReturnModel>';
+        $xmlString .= '<ProcessingStartTime>' . $StartTime . '</ProcessingStartTime>';
+        $xmlString .= '<ArrayOfRecords>';
         
         $recordCount = $resultSet->length();
 
@@ -73,8 +88,10 @@ class PerformanceAPI
             $xmlString .= '</record>';
         }
 
-        $xmlString .= '</records>';
-
+        $xmlString .= '</ArrayOfRecords>';
+        $xmlString .= '<ProcessingEndTime>' . $this->getDateTimeInMilliseconds() . '</ProcessingEndTime>';
+        $xmlString .= '</ReturnModel>';
+        
         return $xmlString;
     }
     
