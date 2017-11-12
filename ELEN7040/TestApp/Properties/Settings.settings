@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TestApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PHPWebservice" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://PVCELEN7040TEST/ELEN7040/phptest/api/</Value>
+    </Setting>
+    <Setting Name="CSharpWebService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://PVCELEN7040TEST/ELEN7040/csharptest/api/Home/</Value>
+    </Setting>
+    <Setting Name="SmallLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="BigLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1000000000</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
