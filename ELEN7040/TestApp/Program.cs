@@ -80,7 +80,7 @@ namespace TestApp
 
 
             // Process Results
-            double serviceProcessingTime = 0;
+            double serviceProcessingTime;
             if (!response.IsSuccessful)
             {
                 LogMessage("Error in connection: " + response.ErrorMessage);
@@ -101,8 +101,8 @@ namespace TestApp
                     }
                     else
                     {
-                        //serviceProcessingTime = double.Parse(resultElement.Element(nsModels+ "ProcessingTime").Value);
-                        LogMessage(string.Format("ProcessingTime: {0}", resultElement.Element(nsModels + "ProcessingTime").Value));
+                        serviceProcessingTime = double.Parse(resultElement.Element(nsModels+ "ProcessingTime").Value);
+                        //LogMessage(string.Format("ProcessingTime: {0}", resultElement.Element(nsModels + "ProcessingTime").Value));
                     }
                 }
             }
@@ -113,7 +113,7 @@ namespace TestApp
             {
                 System.Threading.Thread.Sleep(250);
                 LogMessage(String.Format("RecordLimit: {0}\tThreads {1}:\tLatency: {2}ms\tProcessing: {3}ms", recordLimit, threads, latency, serviceProcessingTime));
-                LogMessage(String.Format("\tClient Overall: {0}ms\tService Overall: {1}ms", ClientProcessingTime, serviceProcessingTime));
+                //LogMessage(String.Format("\tClient Overall: {0}ms\tService Overall: {1}ms", ClientProcessingTime, serviceProcessingTime));
             }
         }
 
