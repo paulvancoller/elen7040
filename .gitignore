@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+/ELEN7040/CSharpWebService/bin
+/ELEN7040/TestClient/bin
+/ELEN7040/TestClient/obj
+/ELEN7040/packages
