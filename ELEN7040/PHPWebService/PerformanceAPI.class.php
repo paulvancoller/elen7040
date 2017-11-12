@@ -16,7 +16,7 @@ class PerformanceAPI
     public function ProcessAPI() {
         
         // Cater for header
-        $this->recordLimit = $this->recordLimit + 1;    
+        $this->recordLimit = $this->recordLimit - 1;    
         
         $resultSet = new Collection();
 
@@ -43,10 +43,40 @@ class PerformanceAPI
             }
         
             fclose($handle);
+
+            return $this->RecordsToXML($resultSet);
+
         } else {
             echo "Data File not found!";
         } 
     }
 
+    private function RecordsToXML($resultSet) {
+        $xmlString = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>';
+        $xmlString .= '<records>';
+        
+        $recordCount = $resultSet->length();
+
+        for ($i = 1; $i <= $recordCount ; $i++) {
+            $record = $resultSet->getItem($i);
+            
+            $xmlString .= '<record>';
+            $xmlString .= '<playerID>' . $record->playerID . '</playerID>';
+            $xmlString .= '<yearID>' . $record->yearID . '</yearID>';
+            $xmlString .= '<stint>' . $record->stint . '</stint>';
+            $xmlString .= '<teamID>' . $record->teamID . '</teamID>';
+            $xmlString .= '<lgID>' . $record->lgID . '</lgID>';
+            $xmlString .= '<G>' . $record->G . '</G>';
+            $xmlString .= '<AB>' . $record->AB . '</AB>';
+            $xmlString .= '<R>' . $record->R . '</R>';
+            $xmlString .= '<H>' . $record->H . '</H>';
+            $xmlString .= '</record>';
+        }
+
+        $xmlString .= '</records>';
+
+        return $xmlString;
+    }
+    
  }
  ?>
