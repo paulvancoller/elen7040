@@ -10,16 +10,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/CSharpWebService.dll">
-      <publishTime>11/12/2017 13:20:44</publishTime>
+      <publishTime>11/12/2017 18:05:34</publishTime>
     </File>
     <File Include="bin/CSharpWebService.pdb">
-      <publishTime>11/12/2017 13:20:44</publishTime>
+      <publishTime>11/12/2017 18:05:34</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>05/05/2017 09:59:26</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>08/03/2014 20:33:56</publishTime>
+      <publishTime>06/18/2017 13:57:10</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>04/13/2017 15:47:48</publishTime>
@@ -178,7 +178,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/10/2017 09:15:34</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/12/2017 13:20:45</publishTime>
+      <publishTime>11/12/2017 18:05:39</publishTime>
     </File>
   </ItemGroup>
 </Project>

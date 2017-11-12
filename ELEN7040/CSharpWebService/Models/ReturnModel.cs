@@ -8,8 +8,7 @@ namespace CSharpWebService.Models
 {
     public class ReturnModel
     {
-        public DateTime ProcessingStartTime { get; set; }
-        public DateTime ProcessingEndTime { get; set; }
+        public double ProcessingTime { get; set; }
         public ConcurrentBag<List<Record>>  processedValue { get; set; }
     }
 }

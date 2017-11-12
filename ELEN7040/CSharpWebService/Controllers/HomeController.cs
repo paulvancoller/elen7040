@@ -6,6 +6,7 @@ using CSharpWebService.Models;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.IO;
+using System.Diagnostics;
 
 namespace CSharpWebService.Controllers
 {
@@ -22,7 +23,8 @@ namespace CSharpWebService.Controllers
         public ReturnModel TestPerformance(int recordLimit, int threads)
         {
             ReturnModel retModel = new ReturnModel();
-            retModel.ProcessingStartTime = DateTime.Now;
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
             ConcurrentBag<List<Record>> fileContentsList = new ConcurrentBag<List<Record>>();
             Parallel.For(0, threads,
@@ -33,7 +35,9 @@ namespace CSharpWebService.Controllers
 
 
             retModel.processedValue = fileContentsList;
-            retModel.ProcessingEndTime = DateTime.Now;
+
+            sw.Stop();
+            retModel.ProcessingTime = Math.Round(sw.Elapsed.TotalMilliseconds, 7);
 
             return retModel;
         }

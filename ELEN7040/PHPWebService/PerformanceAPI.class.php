@@ -14,7 +14,7 @@ class PerformanceAPI
     }
 
     public function ProcessAPI() {
-        $StartTime = $this->getDateTimeInMilliseconds();
+        $StartTime = microtime(true);
 
         // Cater for header
         $this->recordLimit = $this->recordLimit - 1;    
@@ -52,22 +52,9 @@ class PerformanceAPI
         } 
     }
 
-    private function getDateTimeInMilliseconds() {
-        return date("Y-m-d H:i:s") . '.' . $this->getCurrentMilliSeconds();
-    }
-
-    private function getCurrentMilliSeconds() {
-        $timeStampData = microtime();
-        list($msec, $sec) = explode(' ', $timeStampData);
-        $msec = round($msec * 1000);
-        
-        return $msec;
-    }
-
     private function RecordsToXML($resultSet, $StartTime) {
         $xmlString = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>';
         $xmlString .= '<ReturnModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/CSharpWebService.Models">';
-        $xmlString .= '<ProcessingStartTime>' . $StartTime . '</ProcessingStartTime>';
         $xmlString .= '<ArrayOfRecords>';
         
         $recordCount = $resultSet->length();
@@ -89,7 +76,7 @@ class PerformanceAPI
         }
 
         $xmlString .= '</ArrayOfRecords>';
-        $xmlString .= '<ProcessingEndTime>' . $this->getDateTimeInMilliseconds() . '</ProcessingEndTime>';
+        $xmlString .= '<ProcessingTime>' . round((microtime(true) - $StartTime) * 1000, 4)  . '</ProcessingTime>';
         $xmlString .= '</ReturnModel>';
         
         return $xmlString;
