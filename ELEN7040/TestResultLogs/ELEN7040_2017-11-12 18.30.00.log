@@ -1,0 +1,53 @@
+
+
+Paul van Coller ELEN7040 Test starting.
+
+
+Preparing to perform cold start test. Perform IISRESET and press any key to continue...
+PHP test - cold start
+=========
+RecordLimit: 100	Threads 1:	Latency: 265.3792ms	Processing: 1.0631ms
+
+
+5Preparing to perform cold start test. Perform IISRESET and press any key to continue...
+C# test - cold start
+=========
+RecordLimit: 100	Threads 1:	Latency: 592.7651ms	Processing: 2.4625ms
+
+PHP small payload test
+=========
+RecordLimit: 100	Threads 1:	Latency: 252.9829ms	Processing: 0.797ms
+RecordLimit: 100	Threads 1:	Latency: 4.0805ms	Processing: 0.9711ms
+RecordLimit: 100	Threads 1:	Latency: 2.3459ms	Processing: 0.88ms
+RecordLimit: 100	Threads 1:	Latency: 2.4989ms	Processing: 0.845ms
+RecordLimit: 100	Threads 1:	Latency: 2.3738ms	Processing: 0.8209ms
+RecordLimit: 100	Threads 1:	Latency: 2.3818ms	Processing: 0.819ms
+
+C# small payload tests
+=========
+RecordLimit: 100	Threads 1:	Latency: 4.2399ms	Processing: 0.61ms
+RecordLimit: 100	Threads 1:	Latency: 2.4744ms	Processing: 0.6296ms
+RecordLimit: 100	Threads 1:	Latency: 2.4034ms	Processing: 0.6047ms
+RecordLimit: 100	Threads 1:	Latency: 2.4034ms	Processing: 0.6167ms
+RecordLimit: 100	Threads 1:	Latency: 2.5071ms	Processing: 0.6086ms
+RecordLimit: 100	Threads 1:	Latency: 2.43ms	Processing: 0.6133ms
+
+PHP large payload test
+=========
+RecordLimit: 1000000000	Threads 1:	Latency: 97.0768ms	Processing: 1034.4071ms
+RecordLimit: 1000000000	Threads 1:	Latency: 91.6622ms	Processing: 902.148ms
+RecordLimit: 1000000000	Threads 1:	Latency: 86.6983ms	Processing: 865.8578ms
+RecordLimit: 1000000000	Threads 1:	Latency: 80.6205ms	Processing: 850.9951ms
+RecordLimit: 1000000000	Threads 1:	Latency: 76.3096999999999ms	Processing: 857.2521ms
+RecordLimit: 1000000000	Threads 1:	Latency: 153.1417ms	Processing: 1085.4399ms
+
+C# large payload tests
+=========
+RecordLimit: 1000000000	Threads 1:	Latency: 554.7452ms	Processing: 365.5527ms
+RecordLimit: 1000000000	Threads 1:	Latency: 376.4208ms	Processing: 316.1932ms
+RecordLimit: 1000000000	Threads 1:	Latency: 392.964ms	Processing: 375.516ms
+RecordLimit: 1000000000	Threads 1:	Latency: 465.018ms	Processing: 408.8438ms
+RecordLimit: 1000000000	Threads 1:	Latency: 411.8664ms	Processing: 321.1042ms
+RecordLimit: 1000000000	Threads 1:	Latency: 362.3977ms	Processing: 416.3084ms
+
+Test complete.
