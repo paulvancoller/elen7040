@@ -66,7 +66,7 @@ class PerformanceAPI
 
     private function RecordsToXML($resultSet, $StartTime) {
         $xmlString = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>';
-        $xmlString .= '<ReturnModel>';
+        $xmlString .= '<ReturnModel xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/CSharpWebService.Models">';
         $xmlString .= '<ProcessingStartTime>' . $StartTime . '</ProcessingStartTime>';
         $xmlString .= '<ArrayOfRecords>';
         

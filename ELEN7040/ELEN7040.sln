@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.8
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpWebService", "CSharpWebService\CSharpWebService.csproj", "{E082F4AE-33B1-4BC3-A83F-6CF640455A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClient", "TestClient\TestClient.csproj", "{95864975-7D64-4748-8B90-2F719097E378}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{160845B5-CABE-480D-8E8E-2A56CB516447}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{049F2DF1-AD64-4FA4-9F9C-2D1AAA102D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{049F2DF1-AD64-4FA4-9F9C-2D1AAA102D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{049F2DF1-AD64-4FA4-9F9C-2D1AAA102D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{049F2DF1-AD64-4FA4-9F9C-2D1AAA102D7B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E082F4AE-33B1-4BC3-A83F-6CF640455A72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E082F4AE-33B1-4BC3-A83F-6CF640455A72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E082F4AE-33B1-4BC3-A83F-6CF640455A72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E082F4AE-33B1-4BC3-A83F-6CF640455A72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95864975-7D64-4748-8B90-2F719097E378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95864975-7D64-4748-8B90-2F719097E378}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95864975-7D64-4748-8B90-2F719097E378}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95864975-7D64-4748-8B90-2F719097E378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{160845B5-CABE-480D-8E8E-2A56CB516447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{160845B5-CABE-480D-8E8E-2A56CB516447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{160845B5-CABE-480D-8E8E-2A56CB516447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{160845B5-CABE-480D-8E8E-2A56CB516447}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

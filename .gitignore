@@ -105,3 +105,5 @@ ENV/
 /ELEN7040/packages
 /ELEN7040/CSharpWebService/obj
 /ELEN7040/.vs
+/ELEN7040/TestApp/bin
+/ELEN7040/TestApp/obj
