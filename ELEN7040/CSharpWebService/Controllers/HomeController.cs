@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using CSharpWebService.Models;
 using System.Threading.Tasks;
 using System.Collections.Concurrent;
+using System.IO;
 
 namespace CSharpWebService.Controllers
 {
@@ -20,57 +19,63 @@ namespace CSharpWebService.Controllers
         }
 
         [HttpGet]
-        public ReturnModel TestPerformance(string inputData, int threads)
+        public ReturnModel TestPerformance(int recordLimit, int threads)
         {
             ReturnModel retModel = new ReturnModel();
             retModel.ProcessingStartTime = DateTime.Now;
 
-            ConcurrentBag<long> primeNumberList = new ConcurrentBag<long>();
+            ConcurrentBag<List<Record>> fileContentsList = new ConcurrentBag<List<Record>>();
             Parallel.For(0, threads,
                 index =>
                 {
-                    primeNumberList.Add(FindPrimeNumber(inputData.Length * 3000));
+                    fileContentsList.Add(LoadCSVFile(recordLimit));
                 });
 
 
-            retModel.processedValue = primeNumberList;
+            retModel.processedValue = fileContentsList;
             retModel.ProcessingEndTime = DateTime.Now;
 
             return retModel;
         }
 
-        public long FindPrimeNumber(int n)
+        private List<Record> LoadCSVFile(int recordLimit)
         {
-            int count = 0;
-            long a = 2;
+            // increase recordLimit to ignore header
+            recordLimit++;
 
-            while (count < n)
+            List<Record> returnVal = new List<Record>();
+
+            int rowCount = 0;
+            foreach (string fileContents in File.ReadLines(@"C:\Data\Data.csv"))
             {
-                long b = 2;
-                int prime = 1;// to check if found a prime
+                rowCount++;
 
-                while (b * b <= a)
+                // Skip header
+                if (rowCount == 1)
+                    continue;
+
+                if (rowCount > recordLimit)
+                    break;
+
+                string[] lineContents = fileContents.Split(',');
+
+                Record record = new Record()
                 {
-                    if (a % b == 0)
-                    {
-                        prime = 0;
-                        break;
-                    }
+                    playerID = lineContents[0],
+                    yearID = int.Parse(lineContents[1]),
+                    stint = int.Parse(lineContents[2]),
+                    teamID = lineContents[3],
+                    lgID = lineContents[4],
+                    G = int.Parse(lineContents[5]),
+                    AB = int.Parse(lineContents[6]),
+                    R = int.Parse(lineContents[7]),
+                    H = int.Parse(lineContents[8])
+                };
 
-                    b++;
-                }
-
-                if (prime > 0)
-                {
-                    count++;
-                }
-
-                a++;
+                returnVal.Add(record);
             }
 
-            return (--a);
+            return returnVal;
         }
-
-
     }
 }

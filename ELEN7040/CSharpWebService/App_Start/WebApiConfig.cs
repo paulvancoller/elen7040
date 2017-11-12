@@ -16,8 +16,8 @@ namespace CSharpWebService
 
             config.Routes.MapHttpRoute(
                 name: "ActionAPI",
-                routeTemplate: "api/{controller}/{action}/{inputData}/{threads}",
-                defaults: new { controller = "Home", action = "Index", inputData = "", threads = 1 }
+                routeTemplate: "api/{controller}/{action}/{recordLimit}/{threads}",
+                defaults: new { controller = "Home", action = "Index", recordLimit = 1, threads = 1 }
             );
 
             config.Routes.MapHttpRoute(

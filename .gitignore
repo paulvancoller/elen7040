@@ -103,3 +103,4 @@ ENV/
 /ELEN7040/TestClient/bin
 /ELEN7040/TestClient/obj
 /ELEN7040/packages
+/ELEN7040/CSharpWebService/obj

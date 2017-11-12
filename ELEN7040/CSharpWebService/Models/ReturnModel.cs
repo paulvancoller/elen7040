@@ -10,6 +10,6 @@ namespace CSharpWebService.Models
     {
         public DateTime ProcessingStartTime { get; set; }
         public DateTime ProcessingEndTime { get; set; }
-        public ConcurrentBag<long>  processedValue { get; set; }
+        public ConcurrentBag<List<Record>>  processedValue { get; set; }
     }
 }
